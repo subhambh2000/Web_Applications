@@ -1,6 +1,6 @@
 <!-- This is the login screen
      this screen will redirect to the game.php after successfull login-->
-<!-- <?php
+<?php
   session_start();
   if (isset($_POST['cancel'])) {
     header("Location: index_rps.php");
@@ -28,7 +28,7 @@
       if ($check == $stored_hash ) {
         $_SESSION['account'] = $_POST['account'];
         $_SESSION['success'] = "Logged In";
-        $_SESSION['name'] = $_POST['email'];
+        $_SESSION['name'] = $_POST['who'];
         header("Location: view.php");
         // error_log("Login success ".$_POST['who']);
         return;
@@ -41,7 +41,7 @@
       }
     }
   }
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

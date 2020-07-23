@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once "pdo.php";
+session_start();
   if(!isset($_SESSION['name'])){
     die("Not logged in");
   }
@@ -44,7 +44,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 }
  ?>
  <form method="post">
-   <input type="submit" value="Add"/>
+   <input type="submit" name="add" value="Add"/>
    <input type="submit" name="logout" value="Logout">
  </form>
 </div>

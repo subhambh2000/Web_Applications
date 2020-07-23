@@ -1,7 +1,6 @@
 <?php
-session_start();
 require_once "pdo.php";
-
+session_start();
   if (isset($_POST['cancel'])) {
     header('Location: index_rps.php');
     return;
