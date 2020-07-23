@@ -9,10 +9,10 @@
     <div class="container">
       <h1>Welcome to Autos Database</h1>
       <p>
-        <a href="login.php">Please Log In</a>
+        <a href="login_redirect.php">Please Log In</a>
       </p>
       <p>
-        Attempt to go to the <a href="autos.php">autos.php</a> without logging in - it should fail with an error message.
+        Attempt to go to the <a href="view.php">view.php</a> without logging in - it should fail with an error message.
       </p>
     </div>
   </body>
