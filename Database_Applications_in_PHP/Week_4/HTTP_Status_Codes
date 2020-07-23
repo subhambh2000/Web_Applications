@@ -1,0 +1,5 @@
+HTTP Status Codes
+200 OK - URL found
+404 Not Found - URL not found
+302 Found/Moved (Redirect) - URL is moved to a other URL and you are redirected
+301 - I know what you r looking for and it's somewhere else
