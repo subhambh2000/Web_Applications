@@ -9,15 +9,15 @@ session_start();
     echo('<p style="color:green">'.$_SESSION['success']."</p>\n");
     unset($_SESSION['success']);
   }
-  if (isset($_POST['logout'])) {
-    header('Location: logout.php');
-    return;
-  }
-
-  if (isset($_POST['add'])) {
-    header('Location: add.php');
-    return;
-  }
+  // if (isset($_POST['logout'])) {
+  //   header('Location: logout.php');
+  //   return;
+  // }
+  //
+  // if (isset($_POST['add'])) {
+  //   header('Location: add.php');
+  //   return;
+  // }
 
   $_SESSION['stmt']=$pdo->query("select auto_id,make,year,mileage from autos");
 ?>
@@ -43,10 +43,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   echo ("</ul>"."\n");
 }
  ?>
- <form method="post">
-   <input type="submit" name="add" value="Add"/>
-   <input type="submit" name="logout" value="Logout">
- </form>
+ <!-- <form method="post"> -->
+  <a href="add.php">Add New</a>
+  <a href="logout.php">Logout</a>
+ <!-- </form> -->
 </div>
 </body>
 </html>

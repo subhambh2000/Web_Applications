@@ -12,13 +12,13 @@
 
   // $failure = false;
 
-  if (isset($_POST['who']) && isset($_POST['pass'])) {
-    if (strlen($_POST['pass'])<1 || strlen($_POST['who'])<1) {
+  if (isset($_POST['email']) && isset($_POST['pass'])) {
+    if (strlen($_POST['pass'])<1 || strlen($_POST['email'])<1) {
       $_SESSION['error'] = "User name and password required";
       header('Location: login_redirect.php');
       return;
     }
-    elseif (strpos($_POST['who'],"@") == false) {
+    elseif (strpos($_POST['email'],"@") == false) {
       $_SESSION['error'] = "Email must have an at-sign (@)";
       header('Location: login_redirect.php');
       return;
@@ -28,14 +28,14 @@
       if ($check == $stored_hash ) {
         $_SESSION['account'] = $_POST['account'];
         $_SESSION['success'] = "Logged In";
-        $_SESSION['name'] = $_POST['who'];
+        $_SESSION['name'] = $_POST['email'];
         header("Location: view.php");
-        // error_log("Login success ".$_POST['who']);
+        error_log("Login success ".$_POST['email']);
         return;
       }
       else {
         $_SESSION['error'] = "Incorrect password";
-        // error_log("Login fail ".$_POST['who']."$check");
+        error_log("Login fail ".$_POST['email']."$check");
         header('Location: login_redirect.php');
         return;
       }
@@ -62,7 +62,7 @@
     } ?>
     <form method="post">
       <label for="nam">User Name</label>
-      <input type="text" name="who" id="nam"><br/>
+      <input type="text" name="email" id="nam"><br/>
       <label for="passrd">Password</label>
       <input type="password" name="pass" id="passrd"><br/>
       <input type="submit" value="Log In">

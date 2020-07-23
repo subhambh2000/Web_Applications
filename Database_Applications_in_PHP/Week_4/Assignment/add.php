@@ -1,6 +1,7 @@
 <?php
 require_once "pdo.php";
 session_start();
+
   if (isset($_POST['cancel'])) {
     header('Location: index_rps.php');
     return;
@@ -8,9 +9,13 @@ session_start();
   if (isset($_POST['make']) && isset($_POST['year']) && isset($_POST['mileage'])) {
     if (is_numeric($_POST['year']) == 0 || is_numeric($_POST['mileage']) == 0) {
         $_SESSION['error'] = "Mileage and year must be numeric";
+        header('Location: add.php');
+        return;
     }
     else if (strlen($_POST['make'])<1) {
       $_SESSION['error'] = "Make is required";
+      header('Location: add.php');
+      return;
     }
 
     else{
