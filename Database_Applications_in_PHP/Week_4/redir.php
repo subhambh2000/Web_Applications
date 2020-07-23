@@ -17,12 +17,12 @@
   <head>
   </head>
   <body style="font-family: sans-serif;">
-    <p>I am Router Two...</p>
+    <p>I am Router One...</p>
     <form method="post">
       <p><label for="inp9.php">Where to go? (1-3)</label>
         <input type="text" name="where" id="inp9" size="5">
         <input type="submit">
-      </p> 
+      </p>
     </form>
   </body>
 </html>
