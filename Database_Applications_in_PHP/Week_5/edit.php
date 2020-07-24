@@ -1,6 +1,10 @@
 <?php
 require_once "pdo.php";
 session_start();
+if (isset($_POST['cancel'])) {
+  header('Location: index_rdir.php');
+  return;
+}
 if (isset($_POST['name']) && isset($_POST['email'])
       && isset($_POST['password']) && isset($_POST['user_id'])) {
   $sql = "update users set name = :name,
@@ -26,3 +30,11 @@ if ($row === false) {
   return;
 }
 ?>
+
+<p><?php echo ("Edit User\n"."Name: ".htmlentities($row['name'])."\nEmail: "
+                    .htmlentities($row['email'])."\nPassword: "
+                    .htmlentities($row['password'])."\n"); ?></p>
+<form method="post"><input type="hidden" name="user_id" value="<?= $row['user_id']; ?>">
+  <input type="submit" name="update" value="Update"/>
+  <input type="submit" name="cancel" value="Cancel"/>
+</form>
