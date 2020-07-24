@@ -19,7 +19,7 @@ session_start();
       </p> -->
       <?php
       if (isset($_SESSION['error'])) {
-        echo '<p style="color: red">'.$_SESSION['success']."</p>\n";
+        echo '<p style="color: red">'.$_SESSION['error']."</p>\n";
         unset($_SESSION['error']);
       }
       if (isset($_SESSION['success'])) {

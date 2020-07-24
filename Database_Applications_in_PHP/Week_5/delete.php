@@ -2,7 +2,7 @@
   require_once "pdo.php";
   session_start();
   if (isset($_POST['cancel'])) {
-    header('Location: index.php');
+    header('Location: index_rdir.php');
     return;
   }
 
@@ -11,7 +11,7 @@
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(':zip' => $_POST['user_id']));
     $_SESSION['success'] = 'Record Deleted';
-    header('Location: index.php');
+    header('Location: index_rdir.php');
     return;
   }
   $stmt = $pdo->prepare("select name,user_id from users where user_id = :xyz");
@@ -19,7 +19,7 @@
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
   if ($row === false) {
     $_SESSION['error'] = 'Bad value for user_id';
-    header('Location: index.php');
+    header('Location: index_rdir.php');
     return;
   }
 ?>

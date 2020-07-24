@@ -3,7 +3,7 @@ require_once "pdo.php";
 session_start();
 
   if (isset($_POST['cancel'])) {
-    header('Location: index.php');
+    header('Location: index_rdir.php');
     return;
   }
   if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
@@ -16,7 +16,7 @@ session_start();
     ':password' => $_POST['password']
   ));
   $_SESSION['success'] = 'Record Inserted';
-  header('Location: index.php');
+  header('Location: index_rdir.php');
   return;
 }
 ?>
