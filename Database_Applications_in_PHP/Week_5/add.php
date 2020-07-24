@@ -35,7 +35,7 @@ crossorigin="anonymous">
   <p>Name:<input type="text" name="name" size="60"></p>
   <p>Email:<input type="text" name="email"></p>
   <p>Password:<input type="password" name="password"></p>
-  <input type="submit" value="Add New"/>
+  <input type="submit" name="add" value="Add New"/>
   <input type="submit" name="cancel" value="Cancel"/>
 </form>
 </div>
