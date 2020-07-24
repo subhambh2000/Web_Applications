@@ -31,10 +31,18 @@ if ($row === false) {
 }
 ?>
 
-<p><?php echo ("Edit User\n"."Name: ".htmlentities($row['name'])."\nEmail: "
-                    .htmlentities($row['email'])."\nPassword: "
-                    .htmlentities($row['password'])."\n"); ?></p>
-<form method="post"><input type="hidden" name="user_id" value="<?= $row['user_id']; ?>">
-  <input type="submit" name="update" value="Update"/>
+<?php $n = htmlentities($row['name'])
+      $e = htmlentities($row['email'])
+      $p = htmlentities($row['password']); ?>
+<p>Edit User</p>
+<form method="post">
+  <p>Name:
+  <input type="text" name="name" value="<?= $n ?>"></p>
+  <p>Email:
+  <input type="text" name="email" value="<?= $e ?>"></p>
+  <p>Password:
+    <input type="text" name="password" value="<?= $p ?>"></p>
+  <input type="hidden" name="user_id" value="<?= $row['user_id']; ?>">
+  <input type="submit" value="Update"/>
   <input type="submit" name="cancel" value="Cancel"/>
 </form>
