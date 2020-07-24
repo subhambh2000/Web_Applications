@@ -11,18 +11,18 @@ if (isset($_POST['name']) && isset($_POST['email'])
           email = :email,
           password = :password where user_id = :user_id";
   $stmt = $pdo->prepare($sql);
-  $stmt = $pdo->execute(array(
+  $stmt->execute(array(
     ':name' => $_POST['name'],
     ':email' => $_POST['email'],
     ':password' => $_POST['password'],
     ':user_id' => $_POST['user_id']
   ));
-  $_SESSION['success'] = 'Record Inserted';
+  $_SESSION['success'] = 'Record Updated';
   header('Location: index_rdir.php');
   return;
 }
 $stmt = $pdo->prepare("select * from users where user_id = :xyz");
-$stmt = $pdo->execute(array( ":xyz" => $_GET['user_id']));
+$stmt->execute(array( ":xyz" => $_GET['user_id']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($row === false) {
   $_SESSION['error'] = 'Bad value for user_id';
@@ -31,8 +31,8 @@ if ($row === false) {
 }
 ?>
 
-<?php $n = htmlentities($row['name'])
-      $e = htmlentities($row['email'])
+<?php $n = htmlentities($row['name']);
+      $e = htmlentities($row['email']);
       $p = htmlentities($row['password']); ?>
 <p>Edit User</p>
 <form method="post">
