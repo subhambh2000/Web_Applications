@@ -3,7 +3,7 @@
 <?php
   session_start();
   if (isset($_POST['cancel'])) {
-    header("Location: index_rps.php");
+    header("Location: index_auto.php");
     return;
   }
 
@@ -26,11 +26,11 @@
     else {
       $check = hash('md5',$salt.$_POST['pass']);
       if ($check == $stored_hash ) {
-        $_SESSION['account'] = $_POST['account'];
+        // $_SESSION['account'] = $_POST['account'];
         $_SESSION['success'] = "Logged In";
         $_SESSION['name'] = $_POST['email'];
-        header("Location: view.php");
         error_log("Login success ".$_POST['email']);
+        header("Location: index_auto.php");
         return;
       }
       else {

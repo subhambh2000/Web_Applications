@@ -7,7 +7,7 @@
   }
 
   if(isset($_POST['delete']) && isset($_POST['autos_id'])) {
-    $sql = "delete from users where user_id = :zip";
+    $sql = "delete from autos where autos_id = :zip";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(':zip' => $_POST['autos_id']));
     $_SESSION['success'] = 'Record Deleted';
@@ -24,7 +24,7 @@
   }
 ?>
 <p>Confirm: Deleting <?= htmlentities($row['make']); ?></p>
-<form method="post"><input type="hidden" name="autos_id" value="<?= $row['autos_id']; ?>">
+<form method="post"><input type="hidden" name="autos_id" value="<?= $_GET['autos_id']; ?>">
   <input type="submit" name="delete" value="Delete"/>
   <input type="submit" name="cancel" value="Cancel"/>
 </form>

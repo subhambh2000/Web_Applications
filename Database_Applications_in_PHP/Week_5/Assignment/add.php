@@ -1,6 +1,6 @@
 <?php
-require_once "pdo.php";
 session_start();
+require_once "pdo.php";
   if(!isset($_SESSION['name'])){
     die("Access Denied");
   }
@@ -16,7 +16,7 @@ session_start();
       return;
     }
 
-    elseif (is_numeric($_POST['year']) == 0 is_numeric($_POST['mileage']) == 0) {
+    elseif (is_numeric($_POST['year']) == 0) {
         $_SESSION['error'] = "Year must be an integer";
         header('Location: add.php');
         return;
@@ -29,15 +29,15 @@ session_start();
     }
 
     else{
-      $_SESSION['stmt'] = $pdo->prepare('insert into autos (make,year,mileage,model) values (:mk, :yr, :mi, :md)');
-      $_SESSION['stmt']->execute(array(
+      $stmt = $pdo->prepare('insert into autos (make,year,mileage,model) values (:mk, :yr, :mi, :md)');
+      $stmt->execute(array(
         ':mk' => $_POST['make'],
         ':yr' => $_POST['year'],
         ':mi' => $_POST['mileage'],
         ':md' => $_POST['model'])
       );
       $_SESSION['success'] = "Record Added";
-      header('Location: view.php');
+      header('Location: index_auto.php');
       return;
     }
   }
