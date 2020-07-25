@@ -71,6 +71,6 @@ if (isset($_SESSION['error'])) {
   <p>Mileage:
     <input type="text" name="mileage" value="<?= $ml ?>"></p>
   <input type="hidden" name="autos_id" value="<?= $_GET['autos_id']; ?>">
-  <input type="submit" value="Update"/>
+  <input type="submit" value="Save"/>
   <input type="submit" name="cancel" value="Cancel"/>
 </form>
