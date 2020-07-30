@@ -1,0 +1,20 @@
+<script type="text/javascript">
+gl = 123;
+function check(){
+	var gl = 456; // this var keyword is used to declare the variable gl as a local variable for the function check
+		     //if the var keyword is not used the variable inside a function will be global variable
+            // thus overwriting any variable of the same name present outside the function
+}
+check();
+window.console && console.log("with var, GL = "+gl);
+</script>
+<script type="text/javascript">
+gl = 123;
+function check1(){
+	gl = 456; // this var keyword is used to declare the variable gl as a local variable for the function check
+		     //if the var keyword is not used the variable inside a function will be global variable
+            // thus overwriting any variable of the same name present outside the function
+}
+check();
+window.console && console.log("without var, GL = "+gl);
+</script>
