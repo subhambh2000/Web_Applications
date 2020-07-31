@@ -1,0 +1,12 @@
+C - Create
+R - Read
+U - Update
+D - Delete
+
+Five Separate Files:
+index.php - Main list and links to other files
+add.php - Add a new entry
+delete.php - Delete an entry
+edit.php - Edit existing
+view.php (if index.php needs a detail view)
+pdo.php - To make the database connection
