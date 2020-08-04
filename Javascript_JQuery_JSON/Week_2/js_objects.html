@@ -1,0 +1,14 @@
+<script>
+function PartyAnimal(){
+    this.x = 0;
+    this.party = function(){
+        this.x++;
+        console.log("So far "+this.x);
+    }
+}
+an = new PartyAnimal();
+
+an.party();
+an.party();
+an.party();
+</script>
