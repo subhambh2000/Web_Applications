@@ -2,7 +2,7 @@
 function PartyAnimal(){
     this.x = 0;
     window.console && console.log("In the constructor");
-    this.party = function(){
+    this.party = function(){  // syntax for creating a function inside a function(js class)
         this.x++;
         window.console && console.log("So far "+this.x);
     }
