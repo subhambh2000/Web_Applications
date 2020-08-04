@@ -1,9 +1,10 @@
 <script>
 function PartyAnimal(){
     this.x = 0;
+    window.console && console.log("In the constructor");
     this.party = function(){
         this.x++;
-        console.log("So far "+this.x);
+        window.console && console.log("So far "+this.x);
     }
 }
 an = new PartyAnimal();
