@@ -1,4 +1,4 @@
 <?php
-sleep(5);
+sleep(1);
 echo('You sent: '.$_POST['val']);
 ?>
